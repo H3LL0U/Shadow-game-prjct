@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxudoukhsl2ov"]
+
+[ext_resource type="Texture2D" uid="uid://dtjk38lqpwdwb" path="res://Sprites/backgrounds/placeholder grass.png" id="1_22gv8"]
+
+[node name="grass" type="Sprite2D"]
+z_index = -1
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_22gv8")
