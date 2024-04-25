@@ -14,6 +14,7 @@ var current_sprint_mul = 1
 var is_moving = false
 var current_stamina = stamina
 var current_stamina_cooldown = stamina_cooldown
+var look_right = true
 func _physics_process(delta: float) -> void:
 	# Running logic
 	is_moving = Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
@@ -38,20 +39,36 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		self.position.y+=speed*delta*current_sprint_mul
 	if Input.is_action_pressed("move_left"):
+		look_right = false
 		self.position.x-=speed*delta*current_sprint_mul
 	if Input.is_action_pressed("move_right"):
+		look_right = true
 		self.position.x+=speed *delta*current_sprint_mul
 	
 
 	
 	
 
-	# Move the character
+	
 	move_and_slide()
 func _process(delta):
-	$"main camera/UI/stamina".value=current_stamina/stamina*100
-	if $"main camera/UI/stamina".value == 100:
-		$"main camera/UI/stamina".visible = false
+	#update UI
+	$UI/stamina.value=current_stamina/stamina*100
+	if $UI/stamina.value == 100:
+		$UI/stamina.visible = false
 	else:
-		$"main camera/UI/stamina".visible = true
+		$UI/stamina.visible = true
+		
 	
+	#Update animation
+	if not is_moving:
+		$animation.play("idle")
+	else:
+		$animation.stop()
+	
+	if look_right and  $Sprite2D.scale.x<0:
+		$Sprite2D.scale.x*=-1
+		
+	elif not look_right and $Sprite2D.scale.x>0:
+		$Sprite2D.scale.x*=-1
+		
