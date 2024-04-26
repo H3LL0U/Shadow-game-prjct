@@ -6,6 +6,7 @@ extends Camera2D
 
 
 func _process(delta):
+	self.enabled = $"..".enable_cam
 	if Input.is_action_just_pressed("zoom_in") and max_zoom>= self.zoom.x:
 		self.zoom.x+=zoom_value
 		self.zoom.y+=zoom_value

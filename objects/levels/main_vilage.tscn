@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg00x025ddmdc"]
+[gd_scene load_steps=7 format=3 uid="uid://dg00x025ddmdc"]
 
 [ext_resource type="PackedScene" uid="uid://bxhufdfqx7eb3" path="res://objects/blocks/wall.tscn" id="1_lqst0"]
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="2_12gew"]
-[ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="3_ts13w"]
 [ext_resource type="PackedScene" uid="uid://bxudoukhsl2ov" path="res://objects/backgrounds/grass.tscn" id="4_rdn02"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ohpi1"]
@@ -21,7 +20,6 @@ sources/1 = SubResource("TileSetScenesCollectionSource_0e0pa")
 position = Vector2(1, 1)
 
 [node name="Main character" parent="." instance=ExtResource("2_12gew")]
-script = ExtResource("3_ts13w")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1

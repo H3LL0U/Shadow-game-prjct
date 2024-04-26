@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvv0k8k4bjose"]
+
+[ext_resource type="Script" path="res://objects/levels/main_menu.gd" id="1_8mk6u"]
+[ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_kag4r"]
+[ext_resource type="PackedScene" uid="uid://bxudoukhsl2ov" path="res://objects/backgrounds/grass.tscn" id="3_jn5ts"]
+[ext_resource type="PackedScene" uid="uid://ce82kpl0s0ndd" path="res://objects/blocks/fence.tscn" id="3_q63dy"]
+[ext_resource type="PackedScene" uid="uid://pco8j6x1yxte" path="res://objects/blocks/fence_cut.tscn" id="4_s2k7y"]
+[ext_resource type="Script" path="res://objects/levels/main menu UI.gd" id="5_ixfto"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mv2lp"]
+resource_name = "backgrounds"
+scenes/1/scene = ExtResource("3_jn5ts")
+scenes/2/scene = ExtResource("3_q63dy")
+scenes/4/scene = ExtResource("4_s2k7y")
+
+[sub_resource type="TileSet" id="TileSet_g5jwb"]
+sources/0 = SubResource("TileSetScenesCollectionSource_mv2lp")
+
+[node name="main menu" type="Node2D"]
+script = ExtResource("1_8mk6u")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_g5jwb")
+format = 2
+layer_0/tile_data = PackedInt32Array(1638427, 0, 65536, 1638426, 0, 65536, 1638428, 0, 65536, 1638429, 0, 65536, 1638430, 0, 65536, 1638431, 0, 65536, 1638432, 0, 65536, 1638433, 0, 65536, 1638434, 0, 65536, 1638435, 0, 65536, 1638436, 0, 65536, 1638437, 0, 65536, 1638438, 0, 65536, 1638439, 0, 65536, 1638440, 0, 65536, 1638441, 0, 65536, 1638442, 0, 65536, 1638443, 0, 65536, 1638444, 0, 65536, 1638445, 0, 65536, 1638446, 0, 65536, 1638447, 0, 65536, 1638448, 0, 65536, 1638449, 0, 65536, 1638450, 0, 65536, 1638451, 0, 65536, 1638452, 0, 65536, 1638453, 0, 65536, 1638454, 0, 65536, 1638455, 0, 65536, 1638456, 0, 65536, 1638457, 0, 65536, 1638458, 0, 65536, 1638459, 0, 65536, 1638460, 0, 65536, 1638461, 0, 65536, 1638462, 0, 65536, 1638463, 0, 65536, 1638464, 0, 65536, 1638465, 0, 65536, 1638466, 0, 65536, 1638467, 0, 65536, 1638468, 0, 65536, 1638469, 0, 65536, 1638470, 0, 65536, 1638471, 0, 65536, 1704007, 0, 65536, 262149, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262154, 0, 65536, 262156, 0, 65536, 262157, 0, 65536, 262147, 0, 65536, 262145, 0, 65536, 262144, 0, 65536, 393216, 0, 65536, 393218, 0, 65536, 393219, 0, 65536, 393220, 0, 65536, 393221, 0, 65536, 393222, 0, 65536, 393224, 0, 65536, 393225, 0, 65536, 393226, 0, 65536, 393227, 0, 65536, 393229, 0, 65536, 458765, 0, 65536, 458764, 0, 65536, 458763, 0, 65536, 458762, 0, 65536, 458761, 0, 65536, 458760, 0, 65536, 458759, 0, 65536, 458758, 0, 65536, 458757, 0, 65536, 458756, 0, 65536, 458755, 0, 65536, 458754, 0, 65536, 458752, 0, 65536, 131083, 0, 131072, 131085, 0, 131072, 131077, 0, 131072, 131075, 0, 131072, 131073, 0, 131072, 196607, 0, 131072, 131081, 0, 131072, 131079, 0, 262144)
+
+[node name="Main character" parent="." instance=ExtResource("1_kag4r")]
+position = Vector2(242, 335)
+scale = Vector2(1, 1)
+enable_cam = false
+enable_move = false
+
+[node name="main menu UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1164.0
+offset_bottom = 678.0
+size_flags_horizontal = 4
+script = ExtResource("5_ixfto")
+
+[node name="Button" type="Button" parent="main menu UI"]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 292.0
+offset_right = 950.0
+offset_bottom = 372.0
+text = "Play"
+
+[connection signal="pressed" from="main menu UI/Button" to="main menu UI" method="_on_button_pressed"]

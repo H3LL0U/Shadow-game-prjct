@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1o4khlfib6yy"]
+[gd_scene load_steps=10 format=3 uid="uid://d1o4khlfib6yy"]
 
 [ext_resource type="Script" path="res://objects/characters/anti_slip.gd" id="1_3o4lh"]
-[ext_resource type="Texture2D" uid="uid://tbmcwmnpmnow" path="res://Sprites/Characters/main_character/idle/idle.png" id="2_h03gl"]
+[ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="1_a376k"]
+[ext_resource type="Texture2D" uid="uid://cfucigxftpnk8" path="res://Sprites/Characters/main_character/no_borders_guy.png" id="2_jgajl"]
 [ext_resource type="Script" path="res://Scripts/main camera.gd" id="3_igm6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7d8i"]
 size = Vector2(8, 20.5)
+
+[sub_resource type="Animation" id="Animation_hm8ga"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_x0ift"]
 resource_name = "idle"
@@ -24,11 +28,10 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_hm8ga"]
-length = 0.001
-
 [sub_resource type="Animation" id="Animation_u3lup"]
 resource_name = "walk"
+length = 0.50001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,10 +39,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": []
+"values": [12, 13, 14, 15, 15]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e5ski"]
@@ -53,6 +56,7 @@ _data = {
 position = Vector2(16, 16)
 scale = Vector2(0.08, 0.08)
 safe_margin = 0.969
+script = ExtResource("1_a376k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-80, 162.5)
@@ -63,10 +67,10 @@ script = ExtResource("1_3o4lh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-80, -7.62939e-06)
 scale = Vector2(0.844, 0.844)
-texture = ExtResource("2_h03gl")
+texture = ExtResource("2_jgajl")
 hframes = 5
-vframes = 3
-frame = 10
+vframes = 4
+frame = 12
 
 [node name="main camera" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
