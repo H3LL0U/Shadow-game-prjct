@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://pco8j6x1yxte"]
 
-[ext_resource type="Texture2D" uid="uid://b8kwcsv7r7y1n" path="res://Sprites/blocks/fence.png" id="1_yiwb4"]
+[ext_resource type="Texture2D" uid="uid://b8kwcsv7r7y1n" path="res://assets/sprites/blocks/fence.png" id="1_od86u"]
 [ext_resource type="Script" path="res://Scripts/blocks scripts/fence.gd" id="2_4fewm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqtk"]
@@ -8,7 +8,7 @@ size = Vector2(640, 520)
 
 [node name="fence" type="Sprite2D"]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_yiwb4")
+texture = ExtResource("1_od86u")
 script = ExtResource("2_4fewm")
 cut = true
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0j4tfevokkky"
-path="res://.godot/imported/placeholder stick.png-415b510284f712c8ddf0d50fc2e2df92.ctex"
+uid="uid://bxgfydk6lkunu"
+path="res://.godot/imported/brick wall.png-8532598fd1106f371bd07bc1c76b3bc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/placeholder stick.png"
-dest_files=["res://.godot/imported/placeholder stick.png-415b510284f712c8ddf0d50fc2e2df92.ctex"]
+source_file="res://assets/sprites/blocks/brick wall.png"
+dest_files=["res://.godot/imported/brick wall.png-8532598fd1106f371bd07bc1c76b3bc4.ctex"]
 
 [params]
 

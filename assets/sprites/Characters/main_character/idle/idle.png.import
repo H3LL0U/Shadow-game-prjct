@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2xwwybwgp31n"
-path="res://.godot/imported/fence_cut.png-acff25ee91b100822828fa03e510cb3b.ctex"
+uid="uid://tbmcwmnpmnow"
+path="res://.godot/imported/idle.png-ff7f37b3f824e0b5286350bd702a7dbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/blocks/fence_cut.png"
-dest_files=["res://.godot/imported/fence_cut.png-acff25ee91b100822828fa03e510cb3b.ctex"]
+source_file="res://assets/sprites/Characters/main_character/idle/idle.png"
+dest_files=["res://.godot/imported/idle.png-ff7f37b3f824e0b5286350bd702a7dbc.ctex"]
 
 [params]
 

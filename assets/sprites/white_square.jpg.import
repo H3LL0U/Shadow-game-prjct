@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxgfydk6lkunu"
-path="res://.godot/imported/brick wall.png-7c9826e7413ca21e73a475e483776676.ctex"
+uid="uid://d2lmgkkmnhxk7"
+path="res://.godot/imported/white_square.jpg-7c25eddc743b23302833eb96fccefb1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/blocks/brick wall.png"
-dest_files=["res://.godot/imported/brick wall.png-7c9826e7413ca21e73a475e483776676.ctex"]
+source_file="res://assets/sprites/white_square.jpg"
+dest_files=["res://.godot/imported/white_square.jpg-7c25eddc743b23302833eb96fccefb1a.ctex"]
 
 [params]
 

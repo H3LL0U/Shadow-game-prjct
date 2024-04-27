@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://bg0d03uwtrx1k"]
+
+[ext_resource type="Script" path="res://scripts/level scripts/start_credits.gd" id="1_1fm7q"]
+[ext_resource type="Texture2D" uid="uid://u7iprc5akp45" path="res://assets/sprites/black_square.png" id="2_hnq1x"]
+[ext_resource type="FontFile" uid="uid://cy5d4e7ic1ayh" path="res://assets/fonts/ariblk.ttf" id="3_dqkbi"]
+[ext_resource type="Script" path="res://scripts/blocks scripts/Label_logo.gd" id="4_or11x"]
+[ext_resource type="Texture2D" uid="uid://d2lmgkkmnhxk7" path="res://assets/sprites/white_square.jpg" id="4_xy1wi"]
+[ext_resource type="AudioStream" uid="uid://dwbk17knqgeeo" path="res://assets/sounds/sound effects/keyboard_sound_effect.mp3" id="5_5pocj"]
+[ext_resource type="Script" path="res://scripts/blocks scripts/play_sound_trigger.gd" id="7_uln8t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6y32g"]
+bounce = 0.11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skpc3"]
+size = Vector2(60, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8apgd"]
+a = Vector2(-4, -3)
+b = Vector2(130, -3)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ur7nw"]
+a = Vector2(-124, 321)
+b = Vector2(-254, 322)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(260, 182)
+script = ExtResource("1_1fm7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(302, 113)
+scale = Vector2(2.53, 1.7775)
+texture = ExtResource("2_hnq1x")
+
+[node name="Label_logo" type="Label" parent="."]
+offset_left = 59.0
+offset_top = -44.0
+offset_right = 558.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("3_dqkbi")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+uppercase = true
+script = ExtResource("4_or11x")
+
+[node name="sound_effects" type="AudioStreamPlayer" parent="Label_logo"]
+stream = ExtResource("5_5pocj")
+volume_db = -17.333
+
+[node name="_" type="RigidBody2D" parent="." groups=["_"]]
+position = Vector2(378, -3000)
+physics_material_override = SubResource("PhysicsMaterial_6y32g")
+
+[node name="_" type="Sprite2D" parent="_" groups=["_"]]
+scale = Vector2(0.0607501, 0.01375)
+texture = ExtResource("4_xy1wi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="_" groups=["_"]]
+shape = SubResource("RectangleShape2D_skpc3")
+
+[node name="_end_holder" type="StaticBody2D" parent="."]
+position = Vector2(660, -428)
+
+[node name="_end_colider" type="CollisionShape2D" parent="_end_holder"]
+position = Vector2(-345, 498)
+shape = SubResource("SegmentShape2D_8apgd")
+
+[node name="play_sound_trigger" type="Area2D" parent="."]
+position = Vector2(373, 67)
+script = ExtResource("7_uln8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="play_sound_trigger"]
+position = Vector2(194, -324)
+shape = SubResource("SegmentShape2D_ur7nw")
+
+[connection signal="body_entered" from="play_sound_trigger" to="play_sound_trigger" method="_on_body_entered"]

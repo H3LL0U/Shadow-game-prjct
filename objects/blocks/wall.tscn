@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxhufdfqx7eb3"]
 
-[ext_resource type="Texture2D" uid="uid://bxgfydk6lkunu" path="res://Sprites/blocks/brick wall.png" id="1_rbe50"]
+[ext_resource type="Texture2D" uid="uid://bxgfydk6lkunu" path="res://assets/sprites/blocks/brick wall.png" id="1_rbe50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6klw"]
 size = Vector2(740, 780)

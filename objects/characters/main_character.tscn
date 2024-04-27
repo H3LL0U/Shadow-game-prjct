@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/characters/anti_slip.gd" id="1_3o4lh"]
 [ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="1_a376k"]
-[ext_resource type="Texture2D" uid="uid://cfucigxftpnk8" path="res://Sprites/Characters/main_character/no_borders_guy.png" id="2_jgajl"]
 [ext_resource type="Script" path="res://Scripts/main camera.gd" id="3_igm6f"]
+[ext_resource type="Texture2D" uid="uid://cfucigxftpnk8" path="res://assets/sprites/Characters/main_character/no_borders_guy.png" id="3_x8x3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7d8i"]
 size = Vector2(8, 20.5)
@@ -67,7 +67,7 @@ script = ExtResource("1_3o4lh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-80, -7.62939e-06)
 scale = Vector2(0.844, 0.844)
-texture = ExtResource("2_jgajl")
+texture = ExtResource("3_x8x3o")
 hframes = 5
 vframes = 4
 frame = 12

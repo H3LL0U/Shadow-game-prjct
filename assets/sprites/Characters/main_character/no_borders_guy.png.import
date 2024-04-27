@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtjk38lqpwdwb"
-path="res://.godot/imported/placeholder grass.png-a55fa24425c66efe351faf71940db428.ctex"
+uid="uid://cfucigxftpnk8"
+path="res://.godot/imported/no_borders_guy.png-34b6c8375aea25364b1553dc299b6353.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/backgrounds/placeholder grass.png"
-dest_files=["res://.godot/imported/placeholder grass.png-a55fa24425c66efe351faf71940db428.ctex"]
+source_file="res://assets/sprites/Characters/main_character/no_borders_guy.png"
+dest_files=["res://.godot/imported/no_borders_guy.png-34b6c8375aea25364b1553dc299b6353.ctex"]
 
 [params]
 

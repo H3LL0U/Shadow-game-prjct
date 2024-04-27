@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dvv0k8k4bjose"]
 
-[ext_resource type="Script" path="res://objects/levels/main_menu.gd" id="1_8mk6u"]
+[ext_resource type="Script" path="res://Scripts/level scripts/main_menu.gd" id="1_8mk6u"]
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_kag4r"]
 [ext_resource type="PackedScene" uid="uid://bxudoukhsl2ov" path="res://objects/backgrounds/grass.tscn" id="3_jn5ts"]
 [ext_resource type="PackedScene" uid="uid://ce82kpl0s0ndd" path="res://objects/blocks/fence.tscn" id="3_q63dy"]
 [ext_resource type="PackedScene" uid="uid://pco8j6x1yxte" path="res://objects/blocks/fence_cut.tscn" id="4_s2k7y"]
-[ext_resource type="Script" path="res://objects/levels/main menu UI.gd" id="5_ixfto"]
+[ext_resource type="Script" path="res://Scripts/level scripts/main menu UI.gd" id="5_ixfto"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mv2lp"]
 resource_name = "backgrounds"
