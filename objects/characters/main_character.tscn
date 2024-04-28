@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1o4khlfib6yy"]
+[gd_scene load_steps=11 format=3 uid="uid://d1o4khlfib6yy"]
 
 [ext_resource type="Script" path="res://objects/characters/anti_slip.gd" id="1_3o4lh"]
 [ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="1_a376k"]
 [ext_resource type="Script" path="res://Scripts/main camera.gd" id="3_igm6f"]
 [ext_resource type="Texture2D" uid="uid://cfucigxftpnk8" path="res://assets/sprites/Characters/main_character/no_borders_guy.png" id="3_x8x3o"]
+[ext_resource type="PackedScene" uid="uid://d0xwke4rjx5nu" path="res://objects/UI/text_box.tscn" id="5_kcxxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7d8i"]
 size = Vector2(8, 20.5)
@@ -70,11 +71,16 @@ scale = Vector2(0.844, 0.844)
 texture = ExtResource("3_x8x3o")
 hframes = 5
 vframes = 4
-frame = 12
+frame = 15
 
 [node name="main camera" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 script = ExtResource("3_igm6f")
+
+[node name="text_box" parent="main camera" instance=ExtResource("5_kcxxq")]
+visible = false
+position = Vector2(-425, 2675)
+scale = Vector2(12.5, 12.5)
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {

@@ -22,7 +22,7 @@ b = Vector2(130, -3)
 a = Vector2(-124, 321)
 b = Vector2(-254, 322)
 
-[node name="Node2D" type="Node2D"]
+[node name="main vilage" type="Node2D"]
 position = Vector2(260, 182)
 script = ExtResource("1_1fm7q")
 

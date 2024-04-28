@@ -18,6 +18,7 @@ var current_stamina = stamina
 var current_stamina_cooldown = stamina_cooldown
 var look_right = true
 var is_running = false
+
 func _physics_process(delta: float) -> void:
 	# Running logic
 	is_moving = Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
@@ -82,4 +83,7 @@ func _process(delta):
 			
 		elif not look_right and $Sprite2D.scale.x>0:
 			$Sprite2D.scale.x*=-1
-		
+func display_text(txt = ""):
+	pass
+	
+	

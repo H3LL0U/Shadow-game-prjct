@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbmcwmnpmnow"
-path="res://.godot/imported/idle.png-ff7f37b3f824e0b5286350bd702a7dbc.ctex"
+uid="uid://ddayf7m48ej2h"
+path="res://.godot/imported/stationary no borders guy.png-bb0471eca7f20eca2c3fc8475f717927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Characters/main_character/idle/idle.png"
-dest_files=["res://.godot/imported/idle.png-ff7f37b3f824e0b5286350bd702a7dbc.ctex"]
+source_file="res://assets/sprites/Characters/main_character/stationary no borders guy.png"
+dest_files=["res://.godot/imported/stationary no borders guy.png-bb0471eca7f20eca2c3fc8475f717927.ctex"]
 
 [params]
 

@@ -10,8 +10,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("zoom_in") and max_zoom>= self.zoom.x:
 		self.zoom.x+=zoom_value
 		self.zoom.y+=zoom_value
-		
+
 	if Input.is_action_just_pressed("zoom_out") and min_zoom<=self.zoom.x:
 		self.zoom.x-=zoom_value
 		self.zoom.y-=zoom_value
+	scale = Vector2(1 / zoom.x, 1 / zoom.y)
 		
+	
+	
