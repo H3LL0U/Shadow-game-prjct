@@ -42,13 +42,24 @@ offset_bottom = 678.0
 size_flags_horizontal = 4
 script = ExtResource("5_ixfto")
 
-[node name="Button" type="Button" parent="main menu UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="main menu UI"]
 layout_mode = 0
-offset_left = 664.0
-offset_top = 292.0
-offset_right = 950.0
-offset_bottom = 372.0
+offset_left = 710.0
+offset_top = 288.0
+offset_right = 999.0
+offset_bottom = 582.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Play" type="Button" parent="main menu UI/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Play"
+
+[node name="Quit" type="Button" parent="main menu UI/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
 
 [node name="title" type="Label" parent="."]
 offset_left = 487.0
@@ -69,4 +80,5 @@ theme_override_font_sizes/font_size = 30
 text = "Escape from Dystopia"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="main menu UI/Button" to="main menu UI" method="_on_button_pressed"]
+[connection signal="pressed" from="main menu UI/VBoxContainer/Play" to="main menu UI" method="_on_button_pressed"]
+[connection signal="pressed" from="main menu UI/VBoxContainer/Quit" to="main menu UI" method="_on_quit_pressed"]

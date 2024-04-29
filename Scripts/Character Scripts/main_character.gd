@@ -18,6 +18,14 @@ var current_stamina = stamina
 var current_stamina_cooldown = stamina_cooldown
 var look_right = true
 var is_running = false
+var not_in_view = false
+
+var is_dead = false
+func death():
+	enable_move = false
+	is_dead = true
+	#get_tree().reload_current_scene()
+	$animation.play("surrender")
 
 func _physics_process(delta: float) -> void:
 	# Running logic
@@ -83,7 +91,19 @@ func _process(delta):
 			
 		elif not look_right and $Sprite2D.scale.x>0:
 			$Sprite2D.scale.x*=-1
-func display_text(txt = ""):
-	pass
 	
+	#resetting the velocity that might be caused by a collision with another object
+	velocity = Vector2.ZERO
+	
+	
+
+#update the hiding of the player
+func _on_hiding_area_body_entered(body):
+	not_in_view = true
+	modulate = Color(1,1,1,0.5)
+
+
+func _on_hiding_area_body_exited(body):
+	not_in_view = false
+	modulate = Color(1,1,1,1)
 	

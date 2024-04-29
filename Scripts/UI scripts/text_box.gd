@@ -59,6 +59,7 @@ func _process(delta):
 		start = false
 		
 	elif !text_buffer and Input.is_action_just_pressed("next"):
-		$"../..".enable_move = true
+		if not $"../..".is_dead:
+			$"../..".enable_move = true
 		self.visible = false
 		
