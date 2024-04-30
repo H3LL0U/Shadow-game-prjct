@@ -24,6 +24,7 @@ func send_text():
 func _on_area_2d_body_entered(body):
 	if body.name == "Main character":
 		entred = true
+		
 		if activate_immediately :
 			send_text()
 		
@@ -37,4 +38,5 @@ func _on_area_2d_body_exited(body):
 		entred = false
 func  _process(_delta):
 	if entred and not activate_immediately and Input.is_action_just_pressed("use"):
+		
 		send_text()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1o4khlfib6yy"]
+[gd_scene load_steps=13 format=3 uid="uid://d1o4khlfib6yy"]
 
 [ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="1_a376k"]
 [ext_resource type="Script" path="res://Scripts/main camera.gd" id="3_igm6f"]
 [ext_resource type="Texture2D" uid="uid://cfucigxftpnk8" path="res://assets/sprites/Characters/main_character/no_borders_guy.png" id="3_x8x3o"]
+[ext_resource type="PackedScene" uid="uid://bdafmadqxyln4" path="res://objects/UI/settings.tscn" id="5_i4qrj"]
 [ext_resource type="PackedScene" uid="uid://d0xwke4rjx5nu" path="res://objects/UI/text_box.tscn" id="5_kcxxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7d8i"]
@@ -100,8 +101,13 @@ position = Vector2(67.4999, 32.4999)
 zoom = Vector2(2.5, 2.5)
 script = ExtResource("3_igm6f")
 
+[node name="settings" parent="main camera" instance=ExtResource("5_i4qrj")]
+position = Vector2(200, 200)
+scale = Vector2(100, 100)
+
 [node name="text_box" parent="main camera" instance=ExtResource("5_kcxxq")]
 visible = false
+z_index = 3
 position = Vector2(-425, 2675)
 scale = Vector2(12.5, 12.5)
 
@@ -109,26 +115,6 @@ scale = Vector2(12.5, 12.5)
 libraries = {
 "": SubResource("AnimationLibrary_e5ski")
 }
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -3912.5
-offset_top = -2587.5
-offset_right = 5267.5
-offset_bottom = 2592.5
-metadata/_edit_use_anchors_ = true
-
-[node name="stamina" type="ProgressBar" parent="UI"]
-modulate = Color(0.0196078, 1, 1, 1)
-layout_mode = 0
-offset_left = 3680.0
-offset_top = 2270.0
-offset_right = 4145.0
-offset_bottom = 2330.0
-value = 100.0
-show_percentage = false
-metadata/_edit_use_anchors_ = true
 
 [node name="hiding area" type="Area2D" parent="."]
 collision_layer = 32
@@ -140,6 +126,16 @@ visibility_layer = 0
 position = Vector2(-12.5, 162.5)
 scale = Vector2(20, 20)
 shape = SubResource("CircleShape2D_6kpd8")
+
+[node name="stamina" type="ProgressBar" parent="."]
+modulate = Color(0.0196078, 1, 1, 1)
+offset_left = -232.5
+offset_top = -317.5
+offset_right = 232.5
+offset_bottom = -257.5
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="hiding area" to="." method="_on_hiding_area_body_entered"]
 [connection signal="body_exited" from="hiding area" to="." method="_on_hiding_area_body_exited"]

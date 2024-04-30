@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var settings_vars = get_node("/root/SettingsVars")
 @export var text_to_add = ""
 var current_text_speed =34
 var default_current_text_speed=34
@@ -30,7 +31,7 @@ func change_text (speaker :String = "NONE" ,newtext: String="NONE", text_speed_m
 	if speaker!="NONE":
 		$Label_name.text =speaker
 		
-	
+
 
 func _process(delta):
 	#let letters manualy appear
@@ -62,4 +63,8 @@ func _process(delta):
 		if not $"../..".is_dead:
 			$"../..".enable_move = true
 		self.visible = false
-		
+	
+	#Update volume
+	$speaker.volume_db = settings_vars.max_db_sfx-settings_vars.min_db_sfx*(settings_vars.db_general/100*settings_vars.db_sfx/100)+settings_vars.min_db_sfx
+	if settings_vars.db_general == 0 or settings_vars.db_sfx == 0:
+		$speaker.volume_db = -99999999

@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdafmadqxyln4"]
+
+[ext_resource type="Texture2D" uid="uid://bb3cwv6swlqnc" path="res://assets/sprites/UI/screen.png" id="1_5slgy"]
+[ext_resource type="Script" path="res://Scripts/UI scripts/settings.gd" id="1_ybked"]
+[ext_resource type="FontFile" uid="uid://dm4canr8av6iq" path="res://assets/fonts/Mario-Kart-DS.ttf" id="2_4nvup"]
+
+[node name="settings" type="Node2D"]
+visible = false
+z_index = 4
+position = Vector2(566, 303)
+scale = Vector2(7, 7)
+script = ExtResource("1_ybked")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5slgy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -55.0
+offset_top = -18.0
+offset_right = 55.0
+offset_bottom = 12.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 2241.0
+offset_bottom = 862.0
+scale = Vector2(0.05, 0.05)
+theme_override_constants/separation = 30
+
+[node name="Settings label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4nvup")
+theme_override_font_sizes/font_size = 200
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="general sounds label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("2_4nvup")
+theme_override_font_sizes/font_size = 100
+text = "general sounds"
+horizontal_alignment = 1
+
+[node name="general sounds slider" type="HSlider" parent="Control/VBoxContainer"]
+self_modulate = Color(0.870588, 0.815686, 0.768627, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 9
+
+[node name="SFX label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4nvup")
+theme_override_font_sizes/font_size = 100
+text = "Sound effects"
+horizontal_alignment = 1
+
+[node name="SFX slider" type="HSlider" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="music label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4nvup")
+theme_override_font_sizes/font_size = 100
+text = "Music
+"
+horizontal_alignment = 1
+
+[node name="music slider" type="HSlider" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="resume" type="Button" parent="."]
+process_priority = 3
+modulate = Color(0, 1, 0, 1)
+offset_left = 14.8571
+offset_top = 15.4286
+offset_right = 410.858
+offset_bottom = 160.429
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+text = "Resume"
+
+[node name="quit" type="Button" parent="."]
+process_priority = 3
+self_modulate = Color(1, 0, 0, 1)
+offset_left = -31.0
+offset_top = 15.2857
+offset_right = 186.0
+offset_bottom = 160.286
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[connection signal="value_changed" from="Control/VBoxContainer/general sounds slider" to="." method="_on_general_sounds_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/SFX slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/music slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

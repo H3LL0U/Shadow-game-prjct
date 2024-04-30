@@ -6,6 +6,4 @@ func _ready():
 	$"Main character/animation".play("idle")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+

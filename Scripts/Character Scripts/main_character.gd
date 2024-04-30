@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var stamina_cooldown = 1
 @export var enable_cam = true
 @export var enable_move = true
+@export var enable_open_settings = true
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
 
@@ -20,7 +21,7 @@ var look_right = true
 var is_running = false
 var not_in_view = false
 
-var is_dead = false
+@export var is_dead = false
 func death():
 	enable_move = false
 	is_dead = true
@@ -67,11 +68,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 func _process(delta):
 	#update UI
-	$UI/stamina.value=current_stamina/stamina*100
-	if $UI/stamina.value == 100:
-		$UI/stamina.visible = false
+	$stamina.value=current_stamina/stamina*100
+	if $stamina.value == 100:
+		$stamina.visible = false
 	else:
-		$UI/stamina.visible = true
+		$stamina.visible = true
+	if Input.is_action_just_pressed("settings_open") and enable_open_settings:
+		$"main camera/settings".visible = not $"main camera/settings".visible
 		
 	
 	#Update animation
@@ -83,15 +86,15 @@ func _process(delta):
 			$animation.play("walk")
 			if is_running:
 				$animation.speed_scale = current_sprint_mul
-				
-		
+			
 		
 		if look_right and  $Sprite2D.scale.x<0:
 			$Sprite2D.scale.x*=-1
 			
 		elif not look_right and $Sprite2D.scale.x>0:
 			$Sprite2D.scale.x*=-1
-	
+	else:
+		$animation.play("idle")
 	#resetting the velocity that might be caused by a collision with another object
 	velocity = Vector2.ZERO
 	
@@ -100,10 +103,10 @@ func _process(delta):
 #update the hiding of the player
 func _on_hiding_area_body_entered(body):
 	not_in_view = true
-	modulate = Color(1,1,1,0.5)
+	$Sprite2D.modulate = Color(1,1,1,0.5)
 
 
 func _on_hiding_area_body_exited(body):
 	not_in_view = false
-	modulate = Color(1,1,1,1)
+	$Sprite2D.modulate = Color(1,1,1,1)
 	
