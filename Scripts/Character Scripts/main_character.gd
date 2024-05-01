@@ -27,6 +27,7 @@ func death():
 	is_dead = true
 	#get_tree().reload_current_scene()
 	$animation.play("surrender")
+	$"main camera/death_window".visible = true
 
 func _physics_process(delta: float) -> void:
 	# Running logic
@@ -98,7 +99,7 @@ func _process(delta):
 	#resetting the velocity that might be caused by a collision with another object
 	velocity = Vector2.ZERO
 	
-	
+
 
 #update the hiding of the player
 func _on_hiding_area_body_entered(body):

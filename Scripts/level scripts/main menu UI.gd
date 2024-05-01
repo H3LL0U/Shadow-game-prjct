@@ -1,19 +1,14 @@
 extends Control
 
-
+@onready var settings_vars = get_node("/root/SettingsVars")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/Play.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://objects/levels/main_vilage.tscn")
-
+	get_tree().change_scene_to_file("res://objects/levels/level_"+str(settings_vars.max_lvl_reached+1)+".tscn")
+	
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -21,3 +16,7 @@ func _on_quit_pressed():
 
 func _on_settings_pressed():
 	$"../settings".visible = true
+
+
+func _on_levels_pressed():
+	$"../levels_menu".visible = true

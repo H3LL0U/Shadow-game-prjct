@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://urwipf16jx2m"]
+
+[ext_resource type="Script" path="res://Scripts/UI scripts/level_select_btn.gd" id="1_u7316"]
+[ext_resource type="Texture2D" uid="uid://dtlnfc3lrmffd" path="res://assets/sprites/UI/lock_with_chains.png" id="2_q4dq0"]
+
+[node name="level_select_btn" type="Button"]
+offset_left = 202.0
+offset_top = 118.0
+offset_right = 289.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 50
+text = "1"
+script = ExtResource("1_u7316")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(44, 41)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_q4dq0")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dg00x025ddmdc"]
 
-[ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="2_12gew"]
-[ext_resource type="Texture2D" uid="uid://hw2bbow0r6v2" path="res://assets/sprites/blocks/Shadow game sprites.png" id="4_fwsh0"]
-[ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="4_o31j0"]
-[ext_resource type="PackedScene" uid="uid://bkre5wcgrcw0b" path="res://objects/characters/military_man.tscn" id="5_rup8u"]
+[ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_v1r6g"]
+[ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="2_54lqn"]
+[ext_resource type="PackedScene" uid="uid://bkre5wcgrcw0b" path="res://objects/characters/military_man.tscn" id="3_s8ean"]
+[ext_resource type="Texture2D" uid="uid://hw2bbow0r6v2" path="res://assets/sprites/blocks/Shadow game sprites.png" id="4_052h7"]
 
 [sub_resource type="Curve2D" id="Curve2D_qm1lm"]
 _data = {
@@ -12,7 +12,7 @@ _data = {
 point_count = 6
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lupt0"]
-texture = ExtResource("4_fwsh0")
+texture = ExtResource("4_052h7")
 texture_region_size = Vector2i(640, 640)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -55,10 +55,10 @@ sources/0 = SubResource("TileSetAtlasSource_lupt0")
 y_sort_enabled = true
 position = Vector2(1, 1)
 
-[node name="Main character" parent="." instance=ExtResource("2_12gew")]
+[node name="Main character" parent="." instance=ExtResource("1_v1r6g")]
 position = Vector2(64, 19)
 
-[node name="text_trigger" parent="." instance=ExtResource("4_o31j0")]
+[node name="text_trigger" parent="." instance=ExtResource("2_54lqn")]
 y_sort_enabled = true
 authors = ["Border patrol"]
 
@@ -71,7 +71,7 @@ y_sort_enabled = true
 position = Vector2(114, 26)
 rotation = -2.9492
 
-[node name="military man" parent="military_man_path/follow path" instance=ExtResource("5_rup8u")]
+[node name="military man" parent="military_man_path/follow path" instance=ExtResource("3_s8ean")]
 rotation = -0.205395
 metadata/_edit_group_ = true
 

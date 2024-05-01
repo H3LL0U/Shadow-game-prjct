@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvv0k8k4bjose"]
+[gd_scene load_steps=12 format=3 uid="uid://dvv0k8k4bjose"]
 
 [ext_resource type="Script" path="res://Scripts/level scripts/main_menu.gd" id="1_8mk6u"]
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_kag4r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/level scripts/main menu UI.gd" id="5_ixfto"]
 [ext_resource type="FontFile" uid="uid://dm4canr8av6iq" path="res://assets/fonts/Mario-Kart-DS.ttf" id="7_4n4r6"]
 [ext_resource type="PackedScene" uid="uid://bdafmadqxyln4" path="res://objects/UI/settings.tscn" id="8_b33tb"]
+[ext_resource type="PackedScene" uid="uid://crncd6vvj37m" path="res://objects/UI/level_selector.tscn" id="9_rgn4f"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mv2lp"]
 resource_name = "backgrounds"
@@ -47,10 +48,10 @@ script = ExtResource("5_ixfto")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="main menu UI"]
 layout_mode = 0
-offset_left = 710.0
-offset_top = 288.0
-offset_right = 999.0
-offset_bottom = 582.0
+offset_left = 635.0
+offset_top = 203.0
+offset_right = 924.0
+offset_bottom = 497.0
 theme_override_constants/separation = 30
 alignment = 1
 
@@ -63,6 +64,12 @@ text = "Play"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Settings"
+
+[node name="levels" type="Button" parent="main menu UI/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Levels
+"
 
 [node name="Quit" type="Button" parent="main menu UI/VBoxContainer"]
 layout_mode = 2
@@ -90,6 +97,9 @@ horizontal_alignment = 1
 
 [node name="settings" parent="." instance=ExtResource("8_b33tb")]
 
+[node name="levels_menu" parent="." instance=ExtResource("9_rgn4f")]
+
 [connection signal="pressed" from="main menu UI/VBoxContainer/Play" to="main menu UI" method="_on_button_pressed"]
 [connection signal="pressed" from="main menu UI/VBoxContainer/Settings" to="main menu UI" method="_on_settings_pressed"]
+[connection signal="pressed" from="main menu UI/VBoxContainer/levels" to="main menu UI" method="_on_levels_pressed"]
 [connection signal="pressed" from="main menu UI/VBoxContainer/Quit" to="main menu UI" method="_on_quit_pressed"]
