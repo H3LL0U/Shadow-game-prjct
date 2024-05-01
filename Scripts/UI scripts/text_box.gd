@@ -62,7 +62,7 @@ func _process(delta):
 	elif !text_buffer and Input.is_action_just_pressed("next"):
 		if not $"../..".is_dead:
 			$"../..".enable_move = true
-		self.visible = false
+		self.visible = false 
 	
 	#Update volume
 	$speaker.volume_db = settings_vars.max_db_sfx-settings_vars.min_db_sfx*(settings_vars.db_general/100*settings_vars.db_sfx/100)+settings_vars.min_db_sfx

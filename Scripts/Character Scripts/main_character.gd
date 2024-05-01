@@ -26,6 +26,7 @@ func death():
 	enable_move = false
 	is_dead = true
 	#get_tree().reload_current_scene()
+	
 	$animation.play("surrender")
 	$"main camera/death_window".visible = true
 
@@ -94,7 +95,7 @@ func _process(delta):
 			
 		elif not look_right and $Sprite2D.scale.x>0:
 			$Sprite2D.scale.x*=-1
-	else:
+	elif not is_dead:
 		$animation.play("idle")
 	#resetting the velocity that might be caused by a collision with another object
 	velocity = Vector2.ZERO

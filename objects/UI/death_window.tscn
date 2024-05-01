@@ -1,19 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcar1psjn671f"]
+[gd_scene load_steps=7 format=3 uid="uid://dcar1psjn671f"]
 
 [ext_resource type="Script" path="res://Scripts/UI scripts/death_window.gd" id="1_mihcu"]
 [ext_resource type="Texture2D" uid="uid://bb3cwv6swlqnc" path="res://assets/sprites/UI/screen.png" id="2_w8rlo"]
 [ext_resource type="FontFile" uid="uid://dm4canr8av6iq" path="res://assets/fonts/Mario-Kart-DS.ttf" id="3_ckoba"]
 
+[sub_resource type="Animation" id="Animation_0gnv6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pmbph"]
+resource_name = "fall down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(0.517633, 0.138696),
+"update": 0,
+"values": [Vector2(0, -1000), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cnld"]
+_data = {
+"RESET": SubResource("Animation_0gnv6"),
+"fall down": SubResource("Animation_pmbph")
+}
+
 [node name="death_window" type="Node2D"]
 z_index = 3
 script = ExtResource("1_mihcu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(571, 317)
 scale = Vector2(7, 7)
 texture = ExtResource("2_w8rlo")
 
-[node name="Label" type="Label" parent="."]
+[node name="quit" type="Button" parent="Control"]
+process_priority = 3
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 739.0
+offset_top = 386.0
+offset_right = 956.0
+offset_bottom = 531.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[node name="reset" type="Button" parent="Control"]
+process_priority = 3
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 279.0
+offset_top = 383.0
+offset_right = 675.001
+offset_bottom = 528.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+text = "Retry
+"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 130.0
 offset_right = 10888.0
@@ -26,29 +95,11 @@ text = "You have been
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="reset" type="Button" parent="."]
-process_priority = 3
-modulate = Color(0, 1, 0, 1)
-offset_left = 279.0
-offset_top = 383.0
-offset_right = 675.001
-offset_bottom = 528.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 100
-action_mode = 0
-text = "Retry
-"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5cnld")
+}
 
-[node name="quit" type="Button" parent="."]
-process_priority = 3
-self_modulate = Color(1, 0, 0, 1)
-offset_left = 739.0
-offset_top = 386.0
-offset_right = 956.0
-offset_bottom = 531.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 100
-text = "Quit"
-
-[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/reset" to="." method="_on_reset_pressed"]

@@ -20,7 +20,6 @@ SettingsVars="*res://Scripts/setting vars/settings_vars.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]
