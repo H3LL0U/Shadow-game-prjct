@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg00x025ddmdc"]
+[gd_scene load_steps=10 format=3 uid="uid://dg00x025ddmdc"]
 
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_v1r6g"]
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="2_54lqn"]
 [ext_resource type="PackedScene" uid="uid://bkre5wcgrcw0b" path="res://objects/characters/military_man.tscn" id="3_s8ean"]
 [ext_resource type="Texture2D" uid="uid://hw2bbow0r6v2" path="res://assets/sprites/blocks/Shadow game sprites.png" id="4_052h7"]
+[ext_resource type="PackedScene" uid="uid://c6u3p6tkm0s5h" path="res://objects/blocks/door.tscn" id="4_s0lol"]
+[ext_resource type="PackedScene" uid="uid://e4m1kaaki7s4" path="res://objects/blocks/key.tscn" id="5_sn817"]
 
 [sub_resource type="Curve2D" id="Curve2D_qm1lm"]
 _data = {
@@ -64,6 +66,7 @@ authors = ["Border patrol"]
 
 [node name="military_man_path" type="Path2D" parent="."]
 y_sort_enabled = true
+position = Vector2(196, 0)
 curve = SubResource("Curve2D_qm1lm")
 
 [node name="follow path" type="PathFollow2D" parent="military_man_path"]
@@ -74,6 +77,12 @@ rotation = -3.07502
 [node name="military man" parent="military_man_path/follow path" instance=ExtResource("3_s8ean")]
 rotation = -0.205395
 metadata/_edit_group_ = true
+
+[node name="door" parent="." instance=ExtResource("4_s0lol")]
+position = Vector2(36, -16)
+
+[node name="key" parent="door" instance=ExtResource("5_sn817")]
+position = Vector2(149, -24)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.08, 0.08)

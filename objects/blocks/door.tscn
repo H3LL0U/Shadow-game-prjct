@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6u3p6tkm0s5h"]
+
+[ext_resource type="Script" path="res://Scripts/blocks scripts/door.gd" id="1_1f1yd"]
+[ext_resource type="Texture2D" uid="uid://c3gh7g4ckfrse" path="res://assets/sprites/blocks/door.png" id="1_xsk80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_satww"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewnse"]
+size = Vector2(65, 62)
+
+[node name="door" type="Node2D"]
+script = ExtResource("1_1f1yd")
+
+[node name="door_parts" type="Node2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="door_parts"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_xsk80")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="door_parts"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_parts/StaticBody2D"]
+shape = SubResource("RectangleShape2D_satww")
+
+[node name="opening sector" type="Area2D" parent="door_parts"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_parts/opening sector"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ewnse")
+
+[connection signal="body_entered" from="door_parts/opening sector" to="." method="_on_opening_sector_body_entered"]
+[connection signal="body_exited" from="door_parts/opening sector" to="." method="_on_opening_sector_body_exited"]

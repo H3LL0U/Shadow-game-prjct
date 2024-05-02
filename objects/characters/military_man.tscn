@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkre5wcgrcw0b"]
+[gd_scene load_steps=9 format=3 uid="uid://bkre5wcgrcw0b"]
 
 [ext_resource type="Script" path="res://Scripts/Character Scripts/military man.gd" id="1_vc428"]
 [ext_resource type="Texture2D" uid="uid://t2fr5v1w8hct" path="res://assets/sprites/Characters/military man/military_man_sprite_sheet.png" id="2_jtokl"]
 [ext_resource type="Script" path="res://addons/vision_cone_2d/vision_cone_2d.gd" id="3_ejb1l"]
+[ext_resource type="Texture2D" uid="uid://cybdv6cb6p0q8" path="res://assets/sprites/UI/!.png" id="3_i6alv"]
 
 [sub_resource type="Animation" id="Animation_tm2tl"]
 resource_name = "idle"
@@ -59,6 +60,11 @@ texture = ExtResource("2_jtokl")
 hframes = 5
 vframes = 5
 
+[node name="!" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-75, -450)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("3_i6alv")
+
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o27aw")
@@ -91,4 +97,6 @@ color = Color(1, 0, 0, 0.32549)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone2D/Area2D"]
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="body_entered" from="VisionCone2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="VisionCone2D/Area2D" to="." method="_on_area_2d_body_exited"]
