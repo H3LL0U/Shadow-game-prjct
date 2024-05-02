@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shadow game"
-run/main_scene="res://objects/levels/start_credits.tscn"
+run/main_scene="res://objects/levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 
 [autoload]
@@ -21,6 +21,10 @@ SettingsVars="*res://Scripts/setting vars/settings_vars.gd"
 [display]
 
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/vision_cone_2d/plugin.cfg")
 
 [input]
 

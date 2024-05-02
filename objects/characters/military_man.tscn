@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Character Scripts/military man.gd" id="1_vc428"]
 [ext_resource type="Texture2D" uid="uid://t2fr5v1w8hct" path="res://assets/sprites/Characters/military man/military_man_sprite_sheet.png" id="2_jtokl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7ym5"]
-size = Vector2(22.818, 134.48)
+[ext_resource type="Script" path="res://addons/vision_cone_2d/vision_cone_2d.gd" id="3_ejb1l"]
 
 [sub_resource type="Animation" id="Animation_tm2tl"]
 resource_name = "idle"
@@ -61,17 +59,14 @@ texture = ExtResource("2_jtokl")
 hframes = 5
 vframes = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.00002, 143.872)
-scale = Vector2(6.1355, -1.39608)
-shape = SubResource("RectangleShape2D_f7ym5")
-
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o27aw")
 }
 
 [node name="detection" type="Area2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 position = Vector2(-12.5, 25)
@@ -79,4 +74,21 @@ scale = Vector2(30, 30)
 shape = SubResource("CircleShape2D_8yrth")
 debug_color = Color(0.913725, 0.282353, 0.239216, 0.419608)
 
+[node name="VisionCone2D" type="Node2D" parent="." node_paths=PackedStringArray("write_collision_polygon", "write_polygon2d")]
+rotation = -1.5708
+script = ExtResource("3_ejb1l")
+angle_deg = 90
+max_distance = 200.0
+collision_layer_mask = 1
+write_collision_polygon = NodePath("Area2D/CollisionPolygon2D")
+write_polygon2d = NodePath("Polygon2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="VisionCone2D"]
+color = Color(1, 0, 0, 0.32549)
+
+[node name="Area2D" type="Area2D" parent="VisionCone2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone2D/Area2D"]
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_entered" from="VisionCone2D/Area2D" to="." method="_on_area_2d_body_entered"]
