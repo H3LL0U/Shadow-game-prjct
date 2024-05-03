@@ -13,7 +13,7 @@ var text_delay_punctuation = {
 }
 var author_sprites = {
 	"You":preload("res://assets/sprites/Characters/main_character/stationary no borders guy.png"),
-	"Border patrol":preload("res://assets/sprites/Characters/military man/static military man.png")
+	"Patrol Guard":preload("res://assets/sprites/Characters/military man/static military man.png")
 }
 #contains lists which contains 2 parameters: author, text
 @export var text_buffer = []
@@ -53,8 +53,15 @@ func _process(delta):
 		change_text(author_buffer[0],text_buffer[0])
 		if author_buffer[0] in author_sprites:
 			$author_sprite.texture = author_sprites[author_buffer[0]]
+		
 		else:
-			$author_sprite.texture = null
+			var existing_name = false
+			for author_name in author_sprites:
+				if author_buffer[0] in author_name or author_name in author_buffer[0] :
+					$author_sprite.texture = author_sprites[author_name]
+					existing_name = true
+			if not existing_name:
+				$author_sprite.texture = null
 		text_buffer.pop_front()
 		author_buffer.pop_front()
 		start = false

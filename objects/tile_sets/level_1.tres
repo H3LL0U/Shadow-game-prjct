@@ -1,0 +1,55 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://60j6hmcceyw5"]
+
+[ext_resource type="Texture2D" uid="uid://hw2bbow0r6v2" path="res://assets/sprites/blocks/Shadow game sprites.png" id="1_31jls"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lupt0"]
+texture = ExtResource("1_31jls")
+texture_region_size = Vector2i(640, 640)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-320, -320, 320, -320, 320, 320, -320, 320)
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_2/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-226.274, -203.647, 320, -88, 240, 228, -152, 248)
+1:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_2/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_2/angular_velocity = 0.0
+2:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-320, -197, 320, -193, 320, 320, -320, 320)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_1/angular_velocity = 0.0
+1:1/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_2/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_1/angular_velocity = 0.0
+0:1/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_2/angular_velocity = 0.0
+0:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-320, -197, 320, -189, 320, 320, -343, 321)
+
+[resource]
+tile_size = Vector2i(640, 640)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 32
+physics_layer_1/collision_mask = 0
+physics_layer_2/collision_layer = 2
+physics_layer_2/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_lupt0")

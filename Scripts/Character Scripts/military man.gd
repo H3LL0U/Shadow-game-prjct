@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var view_angle = 90
 @export var awareness_meter = 0.3
 @export var view_angle_offset = -90
+@export var default_look_right = true
 var current_awareness = awareness_meter
 var refference_to_main_chr = null
 var chr_in_view = false
@@ -29,22 +30,29 @@ func _process(delta):
 	$"..".rotation_degrees = 0
 	
 	$".".rotation_degrees = 0
-
-	move_left = previous_coordinates.x-global_position.x>0
+	if default_look_right:
+		move_left = previous_coordinates.x-global_position.x>0
+	else:
+		move_left = previous_coordinates.x-global_position.x>=0
+		
 	#play animation
 	
 	if global_position != previous_coordinates:
 		$animation.play("walk")
 		if move_left and scale.x >0:
 			scale.x *=-1
-			$VisionCone2D.rotation_degrees*=-1
+			$VisionCone2D.rotation_degrees+=180
 			
 			
 		if not move_left and scale.x<0:
 			scale.x*=-1
-			$VisionCone2D.rotation_degrees*=-1
+			$VisionCone2D.rotation_degrees+=180
 			
 	else:
+		if scale.x >0 and not default_look_right:
+			scale.x*=-1
+			$VisionCone2D.rotation_degrees+=180
+			
 		$animation.play("idle")
 	previous_coordinates = global_position
 	if current_awareness <0 and refference_to_main_chr!=null:
