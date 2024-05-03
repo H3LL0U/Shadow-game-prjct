@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1o4khlfib6yy"]
+[gd_scene load_steps=15 format=3 uid="uid://d1o4khlfib6yy"]
 
 [ext_resource type="Script" path="res://Scripts/Character Scripts/main_character.gd" id="1_a376k"]
 [ext_resource type="Script" path="res://Scripts/main camera.gd" id="3_igm6f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdafmadqxyln4" path="res://objects/UI/settings.tscn" id="5_i4qrj"]
 [ext_resource type="PackedScene" uid="uid://d0xwke4rjx5nu" path="res://objects/UI/text_box.tscn" id="5_kcxxq"]
 [ext_resource type="PackedScene" uid="uid://dcar1psjn671f" path="res://objects/UI/death_window.tscn" id="6_x4xfv"]
+[ext_resource type="PackedScene" uid="uid://upshpeaseq4e" path="res://objects/UI/win_window.tscn" id="7_kw0ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7d8i"]
 size = Vector2(8, 20.5)
@@ -117,6 +118,10 @@ scale = Vector2(12.5, 12.5)
 [node name="death_window" parent="main camera" instance=ExtResource("6_x4xfv")]
 visible = false
 position = Vector2(-5655, -2920)
+scale = Vector2(10, 10)
+
+[node name="Win window" parent="main camera" instance=ExtResource("7_kw0ol")]
+visible = false
 scale = Vector2(10, 10)
 
 [node name="animation" type="AnimationPlayer" parent="."]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbax2gt3os5de"]
 
-[ext_resource type="Script" path="res://objects/levels/text_trigger.gd" id="1_s4nw2"]
+[ext_resource type="Script" path="res://Scripts/trigger Scripts/text_trigger.gd" id="1_b7540"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hw546"]
 
 [node name="text_trigger" type="Node2D"]
 position = Vector2(-63, -15)
-script = ExtResource("1_s4nw2")
+script = ExtResource("1_b7540")
 
 [node name="Area2D" type="Area2D" parent="."]
 

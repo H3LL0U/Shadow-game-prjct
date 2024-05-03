@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg00x025ddmdc"]
+[gd_scene load_steps=7 format=3 uid="uid://dg00x025ddmdc"]
 
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_v1r6g"]
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="2_54lqn"]
 [ext_resource type="PackedScene" uid="uid://bkre5wcgrcw0b" path="res://objects/characters/military_man.tscn" id="3_s8ean"]
 [ext_resource type="PackedScene" uid="uid://c6u3p6tkm0s5h" path="res://objects/blocks/door.tscn" id="4_s0lol"]
 [ext_resource type="TileSet" uid="uid://60j6hmcceyw5" path="res://objects/tile_sets/level_1.tres" id="6_klnyk"]
+[ext_resource type="PackedScene" uid="uid://butmuwdlsdxes" path="res://objects/triggers/finish_trigger.tscn" id="6_r7tum"]
 
-[node name="main vilage" type="Node2D"]
+[node name="level_1" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(1, 1)
 
@@ -92,3 +93,7 @@ scale = Vector2(1.5, 1.5)
 texts = ["Uhhhh...", "He gave me a compliment, but it wasn't really a compliment :(", "I don't think this guard is in the mental state to have any situational awareness right now..."]
 authors = ["You", "Patrol Guard", "You"]
 delete_after = 1
+
+[node name="finish trigger" parent="." instance=ExtResource("6_r7tum")]
+position = Vector2(694, 727)
+scale = Vector2(5, 5)

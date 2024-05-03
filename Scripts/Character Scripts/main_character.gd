@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var enable_cam = true
 @export var enable_move = true
 @export var enable_open_settings = true
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+
 
 
 var current_sprint_mul = 1.0
@@ -29,7 +29,9 @@ func death():
 	
 	$animation.play("surrender")
 	$"main camera/death_window".visible = true
-
+func win():
+	enable_move = false
+	$"main camera/Win window".visible = true
 func _physics_process(delta: float) -> void:
 	# Running logic
 	is_moving = Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
