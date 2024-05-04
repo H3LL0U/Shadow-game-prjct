@@ -41,17 +41,19 @@ func _process(delta):
 		$animation.play("walk")
 		if move_left and scale.x >0:
 			scale.x *=-1
-			$VisionCone2D.rotation_degrees+=180
+			#$VisionCone2D.rotation_degrees+=180
 			
 			
 		if not move_left and scale.x<0:
 			scale.x*=-1
-			$VisionCone2D.rotation_degrees+=180
+			#$VisionCone2D.rotation_degrees+=180
 			
 	else:
 		if scale.x >0 and not default_look_right:
 			scale.x*=-1
-			$VisionCone2D.rotation_degrees+=180
+		elif scale.x <0 and default_look_right:
+			scale.x*=-1
+			#$VisionCone2D.rotation_degrees+=180
 			
 		$animation.play("idle")
 	previous_coordinates = global_position

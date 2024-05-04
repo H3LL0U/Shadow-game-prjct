@@ -81,6 +81,7 @@ shape = SubResource("CircleShape2D_8yrth")
 debug_color = Color(0.913725, 0.282353, 0.239216, 0.419608)
 
 [node name="VisionCone2D" type="Node2D" parent="." node_paths=PackedStringArray("write_collision_polygon", "write_polygon2d")]
+process_priority = -1
 rotation = -1.5708
 script = ExtResource("3_ejb1l")
 angle_deg = 90

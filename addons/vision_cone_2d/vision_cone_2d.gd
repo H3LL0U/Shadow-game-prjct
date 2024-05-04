@@ -45,10 +45,20 @@ var _last_position = null
 var _last_redraw_time = 0
 
 # constants for optimization
-@onready var _angle = deg_to_rad(angle_deg)
-@onready var _angle_half = _angle/2.
-@onready var _angular_delta = _angle / ray_count
 
+var _angle
+var _angle_half
+var _angular_delta
+#@onready var _angle = deg_to_rad(angle_deg)
+#@onready var _angle_half = _angle/2.
+#@onready var _angular_delta = _angle / ray_count
+func _ready():
+	if "military man" in $"..".name:
+		_angle = deg_to_rad($"..".view_angle)
+	else:
+		_angle = deg_to_rad(angle_deg)
+	_angle_half = _angle/2.
+	_angular_delta = _angle / ray_count
 func _process(_delta: float) -> void:
 	if debug_lines or debug_shape:
 		queue_redraw()

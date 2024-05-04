@@ -16,3 +16,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("use") and in_reach and get_child_count()<2:
 		queue_free()
 		
+
+
+func _on_visibility_changed():
+	
+	
+	$door_parts/StaticBody2D/CollisionShape2D.set_deferred("disabled",not visible)

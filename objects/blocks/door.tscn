@@ -19,7 +19,7 @@ script = ExtResource("1_1f1yd")
 texture = ExtResource("1_xsk80")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_parts"]
-visible = false
+disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_parts/StaticBody2D"]
 shape = SubResource("RectangleShape2D_satww")
@@ -30,5 +30,6 @@ shape = SubResource("RectangleShape2D_satww")
 position = Vector2(18.75, -18.75)
 shape = SubResource("RectangleShape2D_ewnse")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="body_entered" from="door_parts/opening sector" to="." method="_on_opening_sector_body_entered"]
 [connection signal="body_exited" from="door_parts/opening sector" to="." method="_on_opening_sector_body_exited"]
