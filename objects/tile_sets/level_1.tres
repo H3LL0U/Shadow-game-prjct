@@ -60,19 +60,19 @@ texture_region_size = Vector2i(640, 640)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-320, -320, 320, -320, 320, 320, 216, 320, 222, 156, -222, 170, -218, 320, -320, 320)
 1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_1/angular_velocity = 0.0
 1:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_2/angular_velocity = 0.0
+1:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-320, -320, 320, -320, 320, 320, 227, 320, 223, 162, -215, 162, -211, 320, -320, 320)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-320, -320, 320, -320, 320, 320, 218, 320, 222, 158, -226, 160, -218, 320, -320, 320)
 2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_1/angular_velocity = 0.0
 2:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_2/angular_velocity = 0.0
+2:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-320, -320, 320, -320, 320, 320, 221, 320, 223, 160, -215, 164, -221, 320, -320, 320)
 
 [resource]
 tile_size = Vector2i(640, 640)

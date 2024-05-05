@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bxkwoenl42jhf"]
+[gd_scene load_steps=3 format=3 uid="uid://bxkwoenl42jhf"]
+
+[ext_resource type="Script" path="res://Scripts/trigger Scripts/stop_trigger.gd" id="1_j2a0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1mio"]
+size = Vector2(65, 69)
 
 [node name="stop trigger" type="Node2D"]
+script = ExtResource("1_j2a0l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(22.5, 24.5)
+shape = SubResource("RectangleShape2D_y1mio")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

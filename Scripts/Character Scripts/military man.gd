@@ -1,5 +1,9 @@
 extends CharacterBody2D
+
+
 @export var speed = 50
+var current_speed = speed
+var walk_delay = 0
 @export var view_length = 200
 @export var view_angle = 90
 @export var awareness_meter = 0.3
@@ -12,16 +16,26 @@ var time :=0.0
 var previous_coordinates : Vector2 =global_position
 var direction
 var stop = false
+
+func stop_for(seconds):
+	walk_delay = seconds
+	
+
 func _ready():
 	$animation.play("idle")
 	$VisionCone2D.angle_deg = view_angle
 	$VisionCone2D.max_distance = view_length
 	$VisionCone2D.rotation_degrees = view_angle_offset
 var move_left = previous_coordinates.x-global_position.x>0
+
+
+
 func _process(delta):
 	
-	
-	time+=delta
+	if walk_delay<=0:
+		time+=delta
+	else:
+		walk_delay-=delta
 	if $"..".name == "follow path" and not stop:
 		$"..".progress = time*speed
 	
@@ -41,18 +55,27 @@ func _process(delta):
 		$animation.play("walk")
 		if move_left and scale.x >0:
 			scale.x *=-1
-			#$VisionCone2D.rotation_degrees+=180
+			
+			if $VisionCone2D.rotation_degrees >180:
+				$VisionCone2D.rotation_degrees = 360 - $VisionCone2D.rotation_degrees
 			
 			
 		if not move_left and scale.x<0:
 			scale.x*=-1
-			#$VisionCone2D.rotation_degrees+=180
+			if $VisionCone2D.rotation_degrees <180:
+				$VisionCone2D.rotation_degrees = 360 - $VisionCone2D.rotation_degrees  
 			
 	else:
 		if scale.x >0 and not default_look_right:
 			scale.x*=-1
+			if $VisionCone2D.rotation_degrees >180:
+				$VisionCone2D.rotation_degrees = 360 - $VisionCone2D.rotation_degrees
+			#$VisionCone2D.rotation_degrees =180 - $VisionCone2D.rotation_degrees
 		elif scale.x <0 and default_look_right:
 			scale.x*=-1
+			if $VisionCone2D.rotation_degrees <180:
+				$VisionCone2D.rotation_degrees = 360 - $VisionCone2D.rotation_degrees  
+			#$VisionCone2D.rotation_degrees = 180 - $VisionCone2D.rotation_degrees
 			#$VisionCone2D.rotation_degrees+=180
 			
 		$animation.play("idle")
