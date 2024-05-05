@@ -9,7 +9,7 @@ class_name VisionCone2D
 ## Total number of rays that will be shot to cover the angle. Will be distributed at equal distances.
 ## This has the biggest impact on performance in the script.
 ## Have this high enough that it is precise, but low enough that it doesn't affect performance
-@export var ray_count = 100
+@export var ray_count = 50
 ## The maximum length of the rays. Basically how far the character can see
 @export var max_distance = 500.
 
@@ -53,7 +53,8 @@ var _angular_delta
 #@onready var _angle_half = _angle/2.
 #@onready var _angular_delta = _angle / ray_count
 func _ready():
-	if "military man" in $"..".name:
+	if "military man" in $"..".name or "wall_cam" in $"..".name:
+		angle_deg = $"..".view_angle
 		_angle = deg_to_rad($"..".view_angle)
 	else:
 		_angle = deg_to_rad(angle_deg)

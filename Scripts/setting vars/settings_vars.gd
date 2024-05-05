@@ -12,5 +12,5 @@ var min_db_music = -30
 var min_db_sfx = -30
 
 #level settings
-var max_lvl_reached = 10
+var max_lvl_reached = 3
 

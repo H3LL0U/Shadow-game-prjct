@@ -59,7 +59,7 @@ offset_left = 650.0
 offset_top = 50.0
 offset_right = 737.0
 offset_bottom = 130.0
-lvl_num = 4
+lvl_num = 5
 
 [node name="level_select_btn6" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -67,7 +67,7 @@ offset_left = 50.0
 offset_top = 169.0
 offset_right = 137.0
 offset_bottom = 249.0
-lvl_num = 5
+lvl_num = 6
 
 [node name="level_select_btn7" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -75,7 +75,7 @@ offset_left = 200.0
 offset_top = 169.0
 offset_right = 287.0
 offset_bottom = 249.0
-lvl_num = 6
+lvl_num = 7
 
 [node name="level_select_btn8" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -83,7 +83,7 @@ offset_left = 350.0
 offset_top = 169.0
 offset_right = 437.0
 offset_bottom = 249.0
-lvl_num = 7
+lvl_num = 8
 
 [node name="level_select_btn9" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -91,7 +91,7 @@ offset_left = 500.0
 offset_top = 169.0
 offset_right = 587.0
 offset_bottom = 249.0
-lvl_num = 8
+lvl_num = 9
 
 [node name="level_select_btn10" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -99,7 +99,7 @@ offset_left = 650.0
 offset_top = 169.0
 offset_right = 737.0
 offset_bottom = 249.0
-lvl_num = 9
+lvl_num = 10
 
 [node name="level_select_btn11" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -107,7 +107,7 @@ offset_left = 50.0
 offset_top = 291.0
 offset_right = 137.0
 offset_bottom = 371.0
-lvl_num = 10
+lvl_num = 11
 
 [node name="level_select_btn12" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -115,7 +115,7 @@ offset_left = 200.0
 offset_top = 291.0
 offset_right = 287.0
 offset_bottom = 371.0
-lvl_num = 11
+lvl_num = 12
 
 [node name="level_select_btn13" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -123,7 +123,7 @@ offset_left = 350.0
 offset_top = 291.0
 offset_right = 437.0
 offset_bottom = 371.0
-lvl_num = 12
+lvl_num = 13
 
 [node name="level_select_btn14" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -131,7 +131,7 @@ offset_left = 500.0
 offset_top = 291.0
 offset_right = 587.0
 offset_bottom = 371.0
-lvl_num = 13
+lvl_num = 14
 
 [node name="level_select_btn15" parent="Control" instance=ExtResource("2_nsbsm")]
 layout_mode = 0
@@ -139,7 +139,7 @@ offset_left = 650.0
 offset_top = 291.0
 offset_right = 737.0
 offset_bottom = 371.0
-lvl_num = 14
+lvl_num = 15
 
 [node name="close" type="Button" parent="."]
 self_modulate = Color(1, 0, 0, 1)

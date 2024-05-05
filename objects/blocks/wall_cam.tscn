@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://5cpy0y74cl73"]
+
+[ext_resource type="Script" path="res://Scripts/blocks scripts/wall_cam.gd" id="1_05fcn"]
+[ext_resource type="Texture2D" uid="uid://cobdsjbu52ytg" path="res://assets/sprites/blocks/camera.png" id="1_sssrd"]
+[ext_resource type="Script" path="res://addons/vision_cone_2d/vision_cone_2d.gd" id="2_hwslw"]
+
+[node name="wall_cam" type="Node2D"]
+script = ExtResource("1_05fcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_sssrd")
+
+[node name="VisionCone2D" type="Node2D" parent="." node_paths=PackedStringArray("write_collision_polygon", "write_polygon2d")]
+position = Vector2(-3, -7)
+script = ExtResource("2_hwslw")
+collision_layer_mask = 1
+write_collision_polygon = NodePath("Area2D/CollisionPolygon2D")
+write_polygon2d = NodePath("Polygon2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="VisionCone2D"]
+color = Color(1, 0, 0, 0.435294)
+
+[node name="Area2D" type="Area2D" parent="VisionCone2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone2D/Area2D"]
