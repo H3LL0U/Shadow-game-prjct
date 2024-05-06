@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1yfr3bnlx17w"]
+[gd_scene load_steps=11 format=3 uid="uid://d1yfr3bnlx17w"]
 
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_7abd3"]
 [ext_resource type="PackedScene" uid="uid://bkre5wcgrcw0b" path="res://objects/characters/military_man.tscn" id="2_utjjf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxkwoenl42jhf" path="res://objects/triggers/stop_trigger.tscn" id="6_si4eg"]
 [ext_resource type="PackedScene" uid="uid://c2jk26ps2rnej" path="res://objects/triggers/door_open_trigger.tscn" id="7_oee3b"]
 [ext_resource type="PackedScene" uid="uid://5cpy0y74cl73" path="res://objects/blocks/wall_cam.tscn" id="8_lcxxy"]
+[ext_resource type="PackedScene" uid="uid://dgikcofjuyurm" path="res://objects/triggers/sleep_trigger.tscn" id="9_rf0gc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vlsud"]
 _data = {
@@ -29,6 +30,10 @@ layer_1/tile_data = PackedInt32Array(393223, 0, 0, 458759, 0, 0, 589831, 0, 0, 6
 
 [node name="door" parent="." instance=ExtResource("3_0i745")]
 position = Vector2(1460, 129)
+
+[node name="key" parent="door" instance=ExtResource("4_fs4dd")]
+position = Vector2(-10075, -262.5)
+scale = Vector2(1, 1)
 
 [node name="door2" parent="." instance=ExtResource("3_0i745")]
 position = Vector2(1050, 385)
@@ -59,6 +64,8 @@ position = Vector2(385, 435)
 
 [node name="stop trigger" parent="." instance=ExtResource("6_si4eg")]
 position = Vector2(1081, -103)
+rotate_view_angle_offset_on_entry = 90
+rotate_view_angle_offset_on_exit = 90
 
 [node name="stop trigger2" parent="." instance=ExtResource("6_si4eg")]
 position = Vector2(543, -11)
@@ -75,3 +82,10 @@ open_door = false
 
 [node name="wall_cam" parent="." instance=ExtResource("8_lcxxy")]
 position = Vector2(1415, 73)
+view_length = 600
+view_angle_offset = 90
+
+[node name="sleep_trigger" parent="." instance=ExtResource("9_rf0gc")]
+position = Vector2(1249, 348)
+make_sleep_for = 2.0
+reset_after = 3.0

@@ -16,7 +16,7 @@ var time :=0.0
 var previous_coordinates : Vector2 =global_position
 var direction
 var stop = false
-
+var asleep = false
 func stop_for(seconds):
 	walk_delay = seconds
 	
@@ -28,8 +28,18 @@ func _ready():
 	$VisionCone2D.rotation_degrees = view_angle_offset
 var move_left = previous_coordinates.x-global_position.x>0
 
-
-
+func make_sleep():
+	$VisionCone2D/Polygon2D.modulate = Color(1,1,1,0)
+	$VisionCone2D/Area2D/CollisionPolygon2D.disabled = true
+	stop = true
+	$zzz.modulate = Color(1,1,1,1)
+	asleep = true
+func make_awake():
+	$VisionCone2D/Polygon2D.modulate = Color(1,1,1,1)
+	$VisionCone2D/Area2D/CollisionPolygon2D.disabled = false
+	$zzz.modulate = Color(1,1,1,0)
+	stop = false
+	asleep =false
 func _process(delta):
 	
 	if walk_delay<=0:
@@ -77,8 +87,10 @@ func _process(delta):
 				$VisionCone2D.rotation_degrees = 360 - $VisionCone2D.rotation_degrees  
 			#$VisionCone2D.rotation_degrees = 180 - $VisionCone2D.rotation_degrees
 			#$VisionCone2D.rotation_degrees+=180
-			
-		$animation.play("idle")
+		if not asleep:
+			$animation.play("idle")
+		else:
+			$animation.play("sleep")
 	previous_coordinates = global_position
 	if current_awareness <0 and refference_to_main_chr!=null:
 		refference_to_main_chr.death()
