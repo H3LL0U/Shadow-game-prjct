@@ -7,7 +7,7 @@ func _ready():
 	uncut_texture = load("res://assets/sprites/blocks/fence.png")
 	cut_texture = load("res://assets/sprites/blocks/fence_cut.png")
 
-func _process(delta):
+func _process(_delta):
 	if cut:
 		self.texture = cut_texture
 	else:

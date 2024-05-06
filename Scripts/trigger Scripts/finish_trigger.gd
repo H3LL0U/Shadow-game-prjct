@@ -24,7 +24,7 @@ func _on_area_2d_body_exited(body):
 		chr_entred = false
 		ref_to_chr = body
 		
-func _process(delta):
+func _process(_delta):
 	if (Input.is_action_just_pressed("use") and chr_entred) or (activate_immediately and chr_entred):
 		if ref_to_chr != null:
 			var current_lvl = find_current_lvl()

@@ -13,7 +13,8 @@ var text_delay_punctuation = {
 }
 var author_sprites = {
 	"You":preload("res://assets/sprites/Characters/main_character/stationary no borders guy.png"),
-	"Patrol Guard":preload("res://assets/sprites/Characters/military man/static military man.png")
+	"Patrol Guard":preload("res://assets/sprites/Characters/military man/static military man.png"),
+	"Surveillance Guard": preload("res://assets/sprites/Characters/military man/static military man.png")
 }
 #contains lists which contains 2 parameters: author, text
 @export var text_buffer = []

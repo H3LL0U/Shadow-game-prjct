@@ -5,7 +5,6 @@ extends Node2D
 @export var delete_after = -1
 @export var activate_immediately = true
 
-
 var entred = false
 
 func send_text():
@@ -24,6 +23,7 @@ func send_text():
 func _on_area_2d_body_entered(body):
 	if body.name == "Main character":
 		entred = true
+		
 		
 		if activate_immediately :
 			send_text()

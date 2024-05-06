@@ -5,7 +5,7 @@ extends Camera2D
 @export var min_zoom = 1
 
 
-func _process(delta):
+func _process(_delta):
 	self.enabled = $"..".enable_cam
 	if Input.is_action_just_pressed("zoom_in") and max_zoom>= self.zoom.x:
 		self.zoom.x+=zoom_value

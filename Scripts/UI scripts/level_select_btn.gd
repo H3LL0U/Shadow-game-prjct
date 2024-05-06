@@ -4,7 +4,7 @@ var locked = true
 @export var lvl_num = 1
 @onready var settings_vars = get_node("/root/SettingsVars")
 func _ready():
-	if settings_vars.max_lvl_reached+1>=lvl_num:
+	if settings_vars.max_lvl_reached+1>=lvl_num and ResourceLoader.exists("res://objects/levels/level_"+str(lvl_num)+".tscn"):
 		locked = false
 	else:
 		locked = true

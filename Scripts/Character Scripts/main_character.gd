@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 
 	
 	move_and_slide()
-func _process(delta):
+func _process(_delta):
 	#update UI
 	$stamina.value=current_stamina/stamina*100
 	if $stamina.value == 100:
@@ -105,12 +105,12 @@ func _process(delta):
 
 
 #update the hiding of the player
-func _on_hiding_area_body_entered(body):
+func _on_hiding_area_body_entered(_body):
 	not_in_view = true
 	$Sprite2D.modulate = Color(1,1,1,0.5)
 
 
-func _on_hiding_area_body_exited(body):
+func _on_hiding_area_body_exited(_body):
 	not_in_view = false
 	$Sprite2D.modulate = Color(1,1,1,1)
 	
