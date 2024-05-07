@@ -36,7 +36,13 @@ func change_text (speaker :String = "NONE" ,newtext: String="NONE", text_speed_m
 
 func _process(delta):
 	#let letters manualy appear
-
+	if Input.is_action_just_pressed("skip_all_dialogue"):
+		text_buffer = []
+		text_to_add = ""
+		if not $"../..".is_dead and not $"../..".in_cutscene :
+			$"../..".enable_move = true
+		self.visible = false 
+		
 	current_text_speed-=delta
 	if text_to_add!="" and current_text_speed<=0:
 		current_text_speed = default_current_text_speed
@@ -68,7 +74,7 @@ func _process(delta):
 		start = false
 		
 	elif !text_buffer and Input.is_action_just_pressed("next"):
-		if not $"../..".is_dead:
+		if not $"../..".is_dead and not $"../..".in_cutscene :
 			$"../..".enable_move = true
 		self.visible = false 
 	

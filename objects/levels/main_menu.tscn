@@ -68,7 +68,7 @@ text = "Settings"
 [node name="levels" type="Button" parent="main menu UI/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Levels
+text = "Borders
 "
 
 [node name="Quit" type="Button" parent="main menu UI/VBoxContainer"]

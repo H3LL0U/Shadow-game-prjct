@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var enable_open_settings = true
 
 
-
+var in_cutscene = []
 var current_sprint_mul = 1.0
 var is_moving = false
 var current_stamina = stamina
@@ -32,9 +32,13 @@ func death():
 func win():
 	enable_move = false
 	$"main camera/Win window".visible = true
+func activate_run_cutscene(where_to_run):
+	enable_move = false
+	in_cutscene = [true, where_to_run]
+	
 func _physics_process(delta: float) -> void:
 	# Running logic
-	is_moving = Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
+	is_moving = Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right") or in_cutscene
 	if enable_move:
 		if Input.is_action_pressed("sprint") and current_stamina >=0 and is_moving:
 			current_sprint_mul = sprint_mul
@@ -64,7 +68,12 @@ func _physics_process(delta: float) -> void:
 			look_right = true
 			self.position.x+=speed *delta*current_sprint_mul
 	
-
+	elif in_cutscene:
+		if in_cutscene[1] == "right":
+			look_right = true
+			self.position.x+=speed *delta*current_sprint_mul
+			
+			
 	
 	
 
@@ -82,7 +91,7 @@ func _process(_delta):
 		
 	
 	#Update animation
-	if enable_move:
+	if enable_move or in_cutscene:
 		if not is_moving:
 			$animation.play("idle")
 		else:
