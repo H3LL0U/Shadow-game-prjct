@@ -23,3 +23,7 @@ func _on_settings_pressed():
 
 func _on_levels_pressed():
 	$"../levels_menu".visible = true
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://objects/levels/end_credits.tscn")
