@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdt6grpw7piqi"]
+[gd_scene load_steps=11 format=3 uid="uid://cdt6grpw7piqi"]
 
 [ext_resource type="Script" path="res://Scripts/level scripts/custom_level_5.gd" id="1_cvfe7"]
 [ext_resource type="TileSet" uid="uid://60j6hmcceyw5" path="res://objects/tile_sets/level_1.tres" id="1_jhrqs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ce4hjurxgi2b3" path="res://objects/triggers/run_trigger.tscn" id="4_ihyad"]
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="6_og82u"]
 [ext_resource type="PackedScene" uid="uid://bc32grfdptk23" path="res://objects/triggers/fade_trigger.tscn" id="7_sq8tb"]
+[ext_resource type="PackedScene" uid="uid://csflg4iddt544" path="res://objects/sound_player/music_player.tscn" id="8_ewqpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygn5r"]
 size = Vector2(58, 71)
@@ -33,7 +34,7 @@ offset_right = 8150.0
 offset_bottom = 1912.5
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 1000
-text = "Thank You for playing!"
+text = "You have escaped!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -95,6 +96,8 @@ shape = SubResource("RectangleShape2D_ygn5r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(4243, 60.75)
 shape = SubResource("RectangleShape2D_gj5wt")
+
+[node name="music_player" parent="." instance=ExtResource("8_ewqpj")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

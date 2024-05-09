@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg00x025ddmdc"]
+[gd_scene load_steps=8 format=3 uid="uid://dg00x025ddmdc"]
 
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_v1r6g"]
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="2_54lqn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6u3p6tkm0s5h" path="res://objects/blocks/door.tscn" id="4_s0lol"]
 [ext_resource type="TileSet" uid="uid://60j6hmcceyw5" path="res://objects/tile_sets/level_1.tres" id="6_klnyk"]
 [ext_resource type="PackedScene" uid="uid://butmuwdlsdxes" path="res://objects/triggers/finish_trigger.tscn" id="6_r7tum"]
+[ext_resource type="PackedScene" uid="uid://csflg4iddt544" path="res://objects/sound_player/music_player.tscn" id="7_oniti"]
 
 [node name="level_1" type="Node2D"]
 y_sort_enabled = true
@@ -17,8 +18,8 @@ position = Vector2(-100, 19)
 [node name="text_trigger" parent="." instance=ExtResource("2_54lqn")]
 y_sort_enabled = true
 position = Vector2(-97, 30)
-texts = ["No matter what I tried... I could never escape.", "I've always been caught by those pesky guards.", "But now I think I actually have a shot!", "I've learned all the routines of the guards.", "It would probably be as easy as pressing [WASD] in those video games I saw others play overseas.", "Alright, let's go!"]
-authors = ["You", "You", "You", "You", "You", "You"]
+texts = ["No matter what I tried... I could never escape.", "I've always been caught by those pesky guards.", "But now I think I actually have a shot!", "I've learned all the routines of the guards.", "It would probably be as easy as pressing [WASD] in those video games I saw others play overseas.", "I talk too much, I should probably [CTRL] my speech. (Skips all the dialogue)", "Alright, let's go!"]
+authors = ["You", "You", "You", "You", "You", "You", "You"]
 delete_after = 1
 
 [node name="door" parent="." instance=ExtResource("4_s0lol")]
@@ -97,3 +98,5 @@ delete_after = 1
 [node name="finish trigger" parent="." instance=ExtResource("6_r7tum")]
 position = Vector2(694, 727)
 scale = Vector2(5, 5)
+
+[node name="music_player" parent="." instance=ExtResource("7_oniti")]

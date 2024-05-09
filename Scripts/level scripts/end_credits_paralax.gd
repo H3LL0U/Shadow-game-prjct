@@ -14,7 +14,7 @@ func _process(delta):
 	else:
 		scroll_offset.y-=speed*delta
 	
-	if scroll_offset.y<-3000:
+	if scroll_offset.y<-4000:
 		get_tree().change_scene_to_file("res://objects/levels/main_menu.tscn")
 	if scroll_offset.y>0:
 		scroll_offset.y = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5odci60mtp1p"]
+[gd_scene load_steps=12 format=3 uid="uid://5odci60mtp1p"]
 
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="1_7abd3"]
 [ext_resource type="Script" path="res://Scripts/level scripts/custom_level_2.gd" id="1_ve7pr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="6_l3tq1"]
 [ext_resource type="PackedScene" uid="uid://bxkwoenl42jhf" path="res://objects/triggers/stop_trigger.tscn" id="6_si4eg"]
 [ext_resource type="PackedScene" uid="uid://butmuwdlsdxes" path="res://objects/triggers/finish_trigger.tscn" id="9_ilwhl"]
+[ext_resource type="PackedScene" uid="uid://csflg4iddt544" path="res://objects/sound_player/music_player.tscn" id="10_2rlgx"]
 
 [sub_resource type="Curve2D" id="Curve2D_nsrv8"]
 _data = {
@@ -118,3 +119,5 @@ scale = Vector2(1, 3)
 texts = ["Oh man I can't wait for our cook to bring more pizza over here!"]
 authors = ["Patrol Guard"]
 delete_after = 1
+
+[node name="music_player" parent="." instance=ExtResource("10_2rlgx")]

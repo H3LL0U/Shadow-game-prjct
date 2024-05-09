@@ -25,8 +25,10 @@ func _on_quit_pressed():
 
 
 func _on_next_level_pressed():
+	
 	var next_lvl = find_current_lvl()+1
-	if FileAccess.file_exists("res://objects/levels/level_"+str(next_lvl)+".tscn"):
-		get_tree().change_scene_to_file("res://objects/levels/level_"+str(next_lvl)+".tscn")
+	
+	#if FileAccess.file_exists("res://objects/levels/level_"+str(next_lvl)+".tscn"):
+	get_tree().change_scene_to_file("res://objects/levels/level_"+str(next_lvl)+".tscn")
 	
 	

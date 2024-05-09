@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7oj1eps7lkka"]
+[gd_scene load_steps=12 format=3 uid="uid://b7oj1eps7lkka"]
 
 [ext_resource type="TileSet" uid="uid://60j6hmcceyw5" path="res://objects/tile_sets/level_1.tres" id="1_uwxgn"]
 [ext_resource type="PackedScene" uid="uid://d1o4khlfib6yy" path="res://objects/characters/main_character.tscn" id="2_grr77"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://butmuwdlsdxes" path="res://objects/triggers/finish_trigger.tscn" id="7_bbkpg"]
 [ext_resource type="PackedScene" uid="uid://bxkwoenl42jhf" path="res://objects/triggers/stop_trigger.tscn" id="8_vbu2n"]
 [ext_resource type="PackedScene" uid="uid://bbax2gt3os5de" path="res://objects/triggers/text_trigger.tscn" id="9_4eepf"]
+[ext_resource type="PackedScene" uid="uid://csflg4iddt544" path="res://objects/sound_player/music_player.tscn" id="10_qj0ce"]
 
 [sub_resource type="Curve2D" id="Curve2D_puv5b"]
 _data = {
@@ -147,3 +148,5 @@ scale = Vector2(0.1, 0.1)
 texts = ["Eugh, it's all sticky in pizza..."]
 authors = ["You"]
 delete_after = 1
+
+[node name="music_player" parent="." instance=ExtResource("10_qj0ce")]
