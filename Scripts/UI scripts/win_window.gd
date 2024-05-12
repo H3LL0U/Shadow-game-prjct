@@ -30,5 +30,3 @@ func _on_next_level_pressed():
 	
 	#if FileAccess.file_exists("res://objects/levels/level_"+str(next_lvl)+".tscn"):
 	get_tree().change_scene_to_file("res://objects/levels/level_"+str(next_lvl)+".tscn")
-	
-	
