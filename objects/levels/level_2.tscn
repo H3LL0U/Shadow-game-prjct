@@ -114,6 +114,7 @@ position = Vector2(1247, 462)
 scale = Vector2(0.1, 0.1)
 texts = ["*Yawn*", "..."]
 authors = ["Surveillance Guard", "You"]
+delete_after = 1
 
 [node name="finish trigger" parent="." instance=ExtResource("7_awqnu")]
 position = Vector2(2118, 237)
